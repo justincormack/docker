@@ -1389,11 +1389,6 @@ var defaultSeccompProfile = &configs.Seccomp{
 			Args:   []*configs.Arg{},
 		},
 		{
-			Name:   "sysfs",
-			Action: configs.Allow,
-			Args:   []*configs.Arg{},
-		},
-		{
 			Name:   "sysinfo",
 			Action: configs.Allow,
 			Args:   []*configs.Arg{},
@@ -1500,11 +1495,6 @@ var defaultSeccompProfile = &configs.Seccomp{
 		},
 		{
 			Name:   "unlinkat",
-			Action: configs.Allow,
-			Args:   []*configs.Arg{},
-		},
-		{
-			Name:   "ustat",
 			Action: configs.Allow,
 			Args:   []*configs.Arg{},
 		},
