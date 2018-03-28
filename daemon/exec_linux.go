@@ -19,6 +19,13 @@ func (daemon *Daemon) execSetPlatformOpt(c *container.Container, ec *exec.Config
 			GID:            gid,
 			AdditionalGids: additionalGids,
 		}
+		if uid == 0 {
+			p.Capabilities.Effective = p.Capabilities.Bounding
+			p.Capabilities.Permitted = p.Capabilities.Bounding
+		} else {
+			p.Capabilities.Effective = []string{}
+			p.Capabilities.Permitted = []string{}
+		}
 	}
 	if ec.Privileged {
 		if p.Capabilities == nil {
